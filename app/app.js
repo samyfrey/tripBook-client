@@ -8,4 +8,7 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   // $('#post-form').on('submit', authEvents.onPostSubmit)
   $('#post-create').on('submit', tripEvents.onCreatePost)
+  $('#post-index').on('click', tripEvents.onPostIndex)
+  $('#post-feed').on('submit', '.post-update-dynamic', tripEvents.onDynamicUpdatePost)
+  $('#post-feed').on('click', '.post-destroy-dynamic', tripEvents.onDynamicDestroyPost)
 })
