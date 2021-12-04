@@ -11,13 +11,15 @@
 textarea {
     height: 10em;
     width: 50em;
-    display: block
+    display: block;
+    border: 10;
+    resize: none
 }
 
 h1 {
-   font-family: 'Lexend Deca', sans-serif;
-   background-color: rgb(37, 122, 238);
-   color: white
+    font-family: 'Lexend Deca', sans-serif;
+    color: white;
+    display: inline
 }
 
 .login {
@@ -28,14 +30,16 @@ h1 {
     margin: auto;
     text-align: center
 }
-
-#after-sign-in {
+#sign-out {
+    position: absolute;
+    right: 0;
     display: none
 }
 
-#account-section, button {
-    display: inline;
+.after-sign-in {
+    display: none
 }
+
 
 body { 
     margin: auto
@@ -45,4 +49,12 @@ body {
     border: 3px solid $black;
     margin: 20px;
     padding: 20px;
+}
+
+#top-bar {
+    display: inline-block;
+    background-color: rgb(37, 122, 238);
+    width: 100%;
+    position: relative
+
 }

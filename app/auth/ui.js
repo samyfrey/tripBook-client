@@ -1,12 +1,14 @@
 const store = require('../store')
 
 const signUpSuccess = function (responseData) {
+  $('#user-display').removeClass()
+  $('#user-display').addClass('text-success')
   $('#user-display').text('Signed up successfully!')
-
+  setTimeout(() => {
+    $('#user-display').empty()
+  }, 5000)
   //   // remove existing classes and then add a green text-success class from boostrap
   //   // we need to remove classes so it doesnt interfere with our bootstrap if a class has been determined before
-  //   $('#movies-display').removeClass()
-  //   $('#movies-display').addClass('text-success')
 
   //   // clear our the form field
   $('form').trigger('reset')
@@ -42,11 +44,13 @@ const signInSuccess = function (responseData) {
   setTimeout(() => {
     $('#user-display').empty()
   }, 5000)
-  $('#after-sign-in').show()
+  $('.after-sign-in').show()
+  $('.after-sign-in button').addClass('btn btn-primary btn-sm')
+
   //   // after we sign hide this section
   //   $('#before-sign-in').hide()
   //   // after we sign show this section
-  //   $('#after-sign-in').show()
+  //   $('.after-sign-in').show()
 
   console.log('sign in responseData is', responseData)
 }
@@ -88,37 +92,29 @@ const changePasswordFailure = function (error) {
 
 const signOutSuccess = function () {
   $('#user-display').text('Signed out successfully')
-
   $('#user-display').removeClass()
   $('#user-display').addClass('text-success')
-
+  setTimeout(() => {
+    $('#user-display').empty()
+  }, 5000)
   $('form').trigger('reset')
   store.user = null
   $('form').trigger('reset')
-  $('#after-sign-in').hide()
+  $('.after-sign-in').hide()
   $('#login-section').show()
 
   console.log('signOutSuccess ran and nothing was returned!')
 }
 
 const signOutFailure = function (error) {
-//   $('#error-message').text('Signing out failed!')
+  $('#user-display').text('Signing out failed. Please try again')
 
-  //   $('#error-message').removeClass()
-  //   $('#error-message').addClass('text-danger')
+  $('#user-display').removeClass()
+  $('#user-display').addClass('text-danger')
 
-  //   $('form').trigger('reset')
+  $('form').trigger('reset')
   console.log('error is', error)
 }
-
-// const postTripSuccess = function (responseData) {
-//   console.log('responseData is', responseData)
-//   $('#post-feed'.html)
-// }
-
-// const postTripFailure = function (error) {
-//   console.log('error is', error)
-// }
 
 module.exports = {
   signUpSuccess,

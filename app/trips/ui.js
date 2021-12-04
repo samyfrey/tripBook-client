@@ -68,6 +68,7 @@ const onIndexSuccess = function (responseData) {
     `
   })
   $('#post-feed').html(tripsHtml)
+  $('#post-feed').addClass('border')
   $('#post-feed').show()
 }
 
@@ -93,10 +94,6 @@ const onDestroySuccess = function () {
   console.log('post was successfully deleted')
   $('#post-feed').hide()
 }
-// <input type="text" name="trip[title]" placeholder="trip Title Here" required>
-// <input type="text" name="trip[author]" placeholder="trip Author Here" required>
-// to include if ID needed <p>ID: ${trip._id}</p>
-// set the html for all of our trips all at once
 
 module.exports = {
   onCreateSuccess,
