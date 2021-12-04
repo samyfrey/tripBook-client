@@ -1,1 +1,48 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap');
+
+// // post text will need to be adjusted responsive 
+// .post-text {
+//     background-color: grey;
+//     height: 10em;
+//     width: 50em
+// }
+
+textarea {
+    height: 10em;
+    width: 50em;
+    display: block
+}
+
+h1 {
+   font-family: 'Lexend Deca', sans-serif;
+   background-color: rgb(37, 122, 238);
+   color: white
+}
+
+.login {
+    margin: auto
+}
+
+#sign-up, #sign-in {
+    margin: auto;
+    text-align: center
+}
+
+#after-sign-in {
+    display: none
+}
+
+#account-section, button {
+    display: inline;
+}
+
+body { 
+    margin: auto
+}
+
+.border {
+    border: 3px solid $black;
+    margin: 20px;
+    padding: 20px;
+}

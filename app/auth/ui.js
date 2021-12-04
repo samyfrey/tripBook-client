@@ -1,7 +1,7 @@
 const store = require('../store')
 
 const signUpSuccess = function (responseData) {
-//   $('#movies-display').text('Signed up successfully!')
+  $('#user-display').text('Signed up successfully!')
 
   //   // remove existing classes and then add a green text-success class from boostrap
   //   // we need to remove classes so it doesnt interfere with our bootstrap if a class has been determined before
@@ -14,31 +14,35 @@ const signUpSuccess = function (responseData) {
 }
 
 const signUpFailure = function (error) {
-//   $('#error-message').text('Sign up failed!')
+  $('#user-display').text('The credentials you entered are incorrect. Check your email or password and try again')
 
-  //   // remove existing classes and then add a green text-success class from boostrap
-  //   $('#error-message').removeClass()
-  //   $('#error-message').addClass('text-danger')
+  $('#user-display').removeClass()
+  $('#user-display').addClass('text-danger')
+  setTimeout(() => {
+    $('#user-display').empty()
+  }, 5000)
+  // clear our the form field
+  $('form').trigger('reset')
 
-  //   // clear our the form field
-  //   $('form').trigger('reset')
   console.log('error is', error)
 }
 
 const signInSuccess = function (responseData) {
-  // we are going to add the user we got back in our response's data to the 'store' object. So we can access the user's token later in api.js
+  $('#login-section').hide()
 
   console.log('sign in store is', store)
   store.user = responseData.user
-
-  //   $('#movies-display').text('Signed in successfully!')
-  //   setTimeout(() => {
-  //     $('#movies-display').html('')
-
-  //     $('#movies-display').removeClass()
-  //     $('#movies-display').addClass('text-success')
-  //   }, 5000)
   $('form').trigger('reset')
+
+  $('#user-display').html('')
+  $('#user-display').removeClass()
+  $('#user-display').addClass('text-success')
+  $('#user-display').text('Signed in successfully!')
+
+  setTimeout(() => {
+    $('#user-display').empty()
+  }, 5000)
+  $('#after-sign-in').show()
   //   // after we sign hide this section
   //   $('#before-sign-in').hide()
   //   // after we sign show this section
@@ -48,54 +52,51 @@ const signInSuccess = function (responseData) {
 }
 
 const signInFailure = function (error) {
-//   $('#error-message').text('Sign In failed!')
+  $('#user-display').text('The credentials you entered are incorrect. Check your email and password and try again')
 
-  //   $('#error-message').removeClass()
-  //   $('#error-message').addClass('text-danger')
-
-  //   // clear our the form field
-  //   $('form').trigger('reset')
+  $('#user-display').removeClass()
+  $('#user-display').addClass('text-danger')
+  setTimeout(() => {
+    $('#user-display').empty()
+  }, 2000)
+  // clear our the form field
+  $('form').trigger('reset')
   console.log('sign in error is', error)
 }
 
 const changePasswordSuccess = function (responseData) {
-//   $('#movies-display').text('Changed password successfully!')
-
-  //   $('#movies-display').removeClass()
-  //   $('#movies-display').addClass('text-success')
+  $('#user-display').text('Changed password successfully')
+  setTimeout(() => {
+    $('#user-display').empty()
+  }, 2000)
+  $('#user-display').removeClass()
+  $('#user-display').addClass('text-success')
 
   $('form').trigger('reset')
   console.log('change password responseData is', responseData)
 }
 
 const changePasswordFailure = function (error) {
-//   $('#error-message').text('CHanging passwords failed!')
+//   $('#user-display').text('CHanging passwords failed!')
 
-  //   $('#error-message').removeClass()
-  //   $('#error-message').addClass('text-danger')
+  //   $('#user-display').removeClass()
+  //   $('#user-display').addClass('text-danger')
 
   //   $('form').trigger('reset')
   console.log('change pwd error is', error)
 }
 
 const signOutSuccess = function () {
-//   $('#movies-display').text('Signed out successfully')
+  $('#user-display').text('Signed out successfully')
 
-  //   $('#movies-display').removeClass()
-  //   $('#movies-display').addClass('text-success')
+  $('#user-display').removeClass()
+  $('#user-display').addClass('text-success')
 
-  //   $('form').trigger('reset')
-
-  //   // stop keeping track of the signed in user
-  //   store.user = null
-
-  //   // clear (reset) the forms on the page
-  //   $('form').trigger('reset')
-
-  //   // Hide the "after sign in" elements
-  //   $('#after-sign-in').hide()
-  //   // Display the "before sign in" elements
-  //   $('#before-sign-in').show()
+  $('form').trigger('reset')
+  store.user = null
+  $('form').trigger('reset')
+  $('#after-sign-in').hide()
+  $('#login-section').show()
 
   console.log('signOutSuccess ran and nothing was returned!')
 }

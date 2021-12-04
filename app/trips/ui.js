@@ -2,10 +2,6 @@
 
 const getFormFields = require('../../lib/get-form-fields')
 
-// const tripsApi = require('./api.js')
-// const tripsUi = require('./ui.js')
-// const getFormFields = require('../../../lib/get-form-fields')
-
 const onCreateSuccess = function (responseData) {
   // add success message to content
 //   $('#books-create-message').html('You created a new book!')
@@ -30,7 +26,7 @@ const onCreateSuccess = function (responseData) {
   // reset all forms
   $('form').trigger('reset')
   console.log('post successfully created')
-  $('#post-feed').html('THis is where the post created will go')
+  $('#post-feed').html('Post successfully added')
   console.log(responseData)
 }
 
@@ -56,17 +52,6 @@ const onError = function (err) {
   $('form').trigger('reset')
 }
 
-// const onGetTrip = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   const trip = data.trip
-//   if (trip.id.length !== 0) {
-//     tripsApi.show(trip.id).then(tripsUi.onSuccess).catch(tripsUi.onError)
-//   } else {
-//     console.log('Please provide a trip id!')
-//   }
-// }
-
 const onIndexSuccess = function (responseData) {
   const trips = responseData.trip
   console.log(responseData)
@@ -83,16 +68,30 @@ const onIndexSuccess = function (responseData) {
     `
   })
   $('#post-feed').html(tripsHtml)
+  $('#post-feed').show()
 }
 
 const onUpdateSuccess = function (responseData) {
+  $('#user-display').html('')
+  $('#user-display').removeClass()
+  $('#user-display').addClass('text-success')
+  $('#user-display').text('Post updated successfully')
+  setTimeout(() => {
+    $('#user-display').empty()
+  }, 5000)
   console.log('update was successful')
 }
 
 const onDestroySuccess = function () {
-  // $('#books-destroy-message').html('Book successfully deleted!')
-  $('form').trigger('reset')
+  $('#user-display').html('')
+  $('#user-display').removeClass()
+  $('#user-display').addClass('text-success')
+  $('#user-display').text('Your post was deleted')
+  setTimeout(() => {
+    $('#user-display').empty()
+  }, 5000)
   console.log('post was successfully deleted')
+  $('#post-feed').hide()
 }
 // <input type="text" name="trip[title]" placeholder="trip Title Here" required>
 // <input type="text" name="trip[author]" placeholder="trip Author Here" required>
