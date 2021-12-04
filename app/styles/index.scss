@@ -13,6 +13,7 @@ textarea {
     width: 50em;
     display: block;
     border: 10;
+    padding: 50;
     resize: none
 }
 
@@ -47,6 +48,10 @@ body {
 
 .border {
     border: 3px solid $black;
+    margin: 20px;
+    padding: 20px;
+}
+#user-display {
     margin: 20px;
     padding: 20px;
 }
