@@ -1,12 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap');
 
-// // post text will need to be adjusted responsive 
-// .post-text {
-//     background-color: grey;
-//     height: 10em;
-//     width: 50em
-// }
 
 textarea {
     height: 10em;
@@ -23,14 +17,7 @@ h1 {
     display: inline
 }
 
-.login {
-    margin: auto
-}
 
-#sign-up, #sign-in {
-    margin: auto;
-    text-align: center
-}
 #sign-out {
     position: absolute;
     right: 0;
@@ -57,12 +44,23 @@ body {
 }
 
 #top-bar {
-    display: inline-block;
+
     background-color: rgb(37, 122, 238);
     width: 100%;
     position: relative;
     display: none
 }
+
+.before-sign-in {
+    border: 50px
+
+}
+.landing-block {
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+}
+
 #intro-block h1 {
     color: rgb(37, 122, 238);
 }

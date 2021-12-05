@@ -14,21 +14,16 @@
     <body>
 
       <section class="before-sign-in">
+             
 
-
-      <div id="intro-block">
+      <div id="intro-block" class="landing-block">
         <!-- could use the same as above and use ultiple classes in css to show -->
         <h1>TripBook.com</h1>
         <p>Share your travel experiences with your community</p>
       </div>
 
-      <div id="top-bar">
-        <h1>TripBook.com</h1>
-        <button class="btn btn-danger after-sign-in" id="sign-out">Sign Out</button>
-        
-      </div>
-      <section id="login-section">
-      <p>Share your travel experiences with your community</p>
+
+      <div id="login-section" class="landing-block">
         <form id="sign-up" class="border">
         <fieldset>
           <legend>Sign Up</legend>
@@ -48,14 +43,19 @@
         </fieldset>
       </form>
  
-    </section>  
+    </div>  
       
     </section>
 
-
+    <div id="top-bar">
+      <h1>TripBook.com</h1>
+      <button class="btn btn-danger after-sign-in" id="sign-out">Sign Out</button>
+    </div>
     <div id="user-display"></div>
       <!-- we only this section to be visible after you sign in, by default it should not be displayed-->
       <section class="after-sign-in">
+       
+
       <section id="account-section">
         <form id="change-password" class="border">
           <fieldset>

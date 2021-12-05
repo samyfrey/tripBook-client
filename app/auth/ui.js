@@ -44,7 +44,10 @@ const signInSuccess = function (responseData) {
   setTimeout(() => {
     $('#user-display').empty()
   }, 5000)
+  $('.before-sign-in').hide()
+  $('#top-bar').show()
   $('.after-sign-in').show()
+
   $('.after-sign-in button').addClass('btn btn-primary btn-sm')
 
   //   // after we sign hide this section
@@ -101,7 +104,7 @@ const signOutSuccess = function () {
   store.user = null
   $('form').trigger('reset')
   $('.after-sign-in').hide()
-  $('#login-section').show()
+  $('.before-sign-in').show()
 
   console.log('signOutSuccess ran and nothing was returned!')
 }
