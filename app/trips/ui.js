@@ -34,19 +34,14 @@ const onError = function (err) {
   // log the error for debugging purposes
   console.error(err)
 
-  //   // display a message to the user to let them know what they were doing did
-  //   // not work correctly
-  //   $('#error-message').html('Something went wrong, please try again.')
+  $('#user-display').html('Something went wrong, please try again.')
 
-  //   // add class for error messaging
-  //   $('#error-message').addClass('failure')
+  $('#user-display').addClass('failure')
 
-  //   // use setTimeout to allow the error message to stay for 5 seconds before
-  //   // the message is replaced with '' and the 'failure' class is removed
-  //   setTimeout(() => {
-  //     $('#error-message').html('')
-  //     $('#error-message').removeClass('failure')
-  //   }, 5000)
+  setTimeout(() => {
+    $('#user-display').html('')
+    $('#user-display').removeClass('failure')
+  }, 5000)
 
   // reset all forms
   $('form').trigger('reset')

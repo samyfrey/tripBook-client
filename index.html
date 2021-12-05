@@ -12,37 +12,44 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <div id="top-bar">
-        <h1>TripBook.com</h1>
-        <button class="btn btn-danger after-sign-in" id="sign-out">Sign Out</button>
+
+      <section class="before-sign-in">
         
-      </div>
-      <section id="login-section">
-      <p>Share your travel experiences with your community</p>
-        <form id="sign-up" class="border">
-        <fieldset>
-          <legend>Sign Up</legend>
-          <input type="email" name="credentials[email]" placeholder="Email" required>
-          <input type="password" name="credentials[password]" placeholder="Password" required>
-          <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
-          <button class="btn btn-primary">Sign Up</button>
-        </fieldset>
-      </form>
-      <!-- Sign in form goes here -->
-      <form id="sign-in" class="border">
-        <fieldset>
-          <legend>Sign In</legend>
-          <input type="email" name="credentials[email]" placeholder="Email" required>
-          <input type="password" name="credentials[password]" placeholder="Password" required>
-          <button class="btn btn-primary">Sign In</button>
-        </fieldset>
-      </form>
- 
-    </section>  
-      
-    <div id="user-display"></div>
+        <div id="top-bar">
+          <h1>TripBook.com</h1>
+          <button class="btn btn-danger after-sign-in" id="sign-out">Sign Out</button>
+        </div>
+        
+       
+        
+        
+        <div id="login-section">
+          <form id="sign-up" class="border">
+          <fieldset>
+            <legend>Sign Up</legend>
+            <input type="email" name="credentials[email]" placeholder="Email" required>
+            <input type="password" name="credentials[password]" placeholder="Password" required>
+            <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
+            <button class="btn btn-primary">Sign Up</button>
+          </fieldset>
+        </form>
+        <!-- Sign in form goes here -->
+        <form id="sign-in" class="border">
+          <fieldset>
+            <legend>Sign In</legend>
+            <input type="email" name="credentials[email]" placeholder="Email" required>
+            <input type="password" name="credentials[password]" placeholder="Password" required>
+            <button class="btn btn-primary">Sign In</button>
+          </fieldset>
+        </form>
+  
+      </div>  
+    </section>
+    
+      <div id="user-display"></div>
       <!-- we only this section to be visible after you sign in, by default it should not be displayed-->
-      <section class="after-sign-in">
+    <section class="after-sign-in">
+
       <section id="account-section">
         <form id="change-password" class="border">
           <fieldset>

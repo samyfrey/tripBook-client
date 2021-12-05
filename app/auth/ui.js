@@ -16,8 +16,7 @@ const signUpSuccess = function (responseData) {
 }
 
 const signUpFailure = function (error) {
-  $('#user-display').text('The credentials you entered are incorrect. Check your email or password and try again')
-
+  $('#user-display').text("The passwords you entered don't match. Please try again")
   $('#user-display').removeClass()
   $('#user-display').addClass('text-danger')
   setTimeout(() => {
@@ -45,12 +44,9 @@ const signInSuccess = function (responseData) {
     $('#user-display').empty()
   }, 5000)
   $('.after-sign-in').show()
+  $('#top-bar').show()
   $('.after-sign-in button').addClass('btn btn-primary btn-sm')
 
-  //   // after we sign hide this section
-  //   $('#before-sign-in').hide()
-  //   // after we sign show this section
-  //   $('.after-sign-in').show()
 
   console.log('sign in responseData is', responseData)
 }

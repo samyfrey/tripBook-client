@@ -1,12 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap');
-
-// // post text will need to be adjusted responsive 
-// .post-text {
-//     background-color: grey;
-//     height: 10em;
-//     width: 50em
-// }
+@import url('https://fonts.googleapis.com/css2?family=Ruda:wght@600&display=swap');
 
 textarea {
     height: 10em;
@@ -18,7 +11,7 @@ textarea {
 }
 
 h1 {
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Ruda', sans-serif;
     color: white;
     display: inline
 }
@@ -43,7 +36,8 @@ h1 {
 
 
 body { 
-    margin: auto
+    margin: auto;
+    background-color: rgb(238, 240, 243)
 }
 
 .border {
@@ -60,6 +54,6 @@ body {
     display: inline-block;
     background-color: rgb(37, 122, 238);
     width: 100%;
-    position: relative
+    position: relative;
 
 }
