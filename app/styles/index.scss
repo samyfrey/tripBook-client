@@ -60,6 +60,9 @@ body {
     display: inline-block;
     background-color: rgb(37, 122, 238);
     width: 100%;
-    position: relative
-
+    position: relative;
+    display: none
+}
+#intro-block h1 {
+    color: rgb(37, 122, 238);
 }
