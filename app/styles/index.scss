@@ -1,0 +1,92 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap');
+
+
+textarea {
+    height: 10em;
+    min-width: 100%;
+    display: block;
+    resize: none
+}
+
+input {
+    display: block
+}
+
+h1 {
+    font-family: 'Ruda', sans-serif;
+    color: white;
+    display: inline
+}
+
+
+#sign-out-btn {
+    position: absolute;
+    right: 1%;
+    display: none;
+    margin-top: 0.5%
+}
+
+.after-sign-in {
+    display: none
+}
+
+
+.border {
+    border: 3px solid $black;
+    margin: 10px;
+    padding: 10px;
+}
+#user-display {
+    margin: 10px;
+    padding: 10px;
+    width: 50vw;
+    height: 5vw
+}
+
+#top-bar {
+    
+    background-color: rgb(37, 122, 238);
+    width: 100%;
+    position: relative;
+    
+    
+}
+
+.post-title {
+    margin: 5px 10px
+}
+
+.index-btn {
+    display: inline-block
+}
+
+#login-section {
+    margin: 30px;
+    width: 50vw;
+    text-align: center;
+}
+
+#login-section input {
+margin-left: auto;
+margin-right: auto
+}
+
+#intro-block h1 {
+    color: rgb(37, 122, 238);
+}
+
+.flexbox-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10%
+    
+}
+@media only screen and (min-width: 860px) {
+    .flexbox-container {
+        flex-direction: unset;
+
+    }
+}
