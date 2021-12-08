@@ -5,7 +5,7 @@ $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('click', authEvents.onSignOut)
+  $('#sign-out-btn').on('click', authEvents.onSignOut)
   // $('#post-form').on('submit', authEvents.onPostSubmit)
   $('#post-create').on('submit', tripEvents.onCreatePost)
   $('#post-index').on('click', tripEvents.onPostIndex)

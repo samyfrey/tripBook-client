@@ -1,13 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Ruda:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap');
+
 
 textarea {
     height: 10em;
-    width: 50em;
+    min-width: 100%;
     display: block;
-    border: 10;
-    padding: 50;
     resize: none
+}
+
+input {
+    display: block
 }
 
 h1 {
@@ -16,18 +19,12 @@ h1 {
     display: inline
 }
 
-.login {
-    margin: auto
-}
 
-#sign-up, #sign-in {
-    margin: auto;
-    text-align: center
-}
-#sign-out {
+#sign-out-btn {
     position: absolute;
-    right: 0;
-    display: none
+    right: 1%;
+    display: none;
+    margin-top: 0.5%
 }
 
 .after-sign-in {
@@ -35,25 +32,61 @@ h1 {
 }
 
 
-body { 
-    margin: auto;
-    background-color: rgb(238, 240, 243)
-}
-
 .border {
     border: 3px solid $black;
-    margin: 20px;
-    padding: 20px;
+    margin: 10px;
+    padding: 10px;
 }
 #user-display {
-    margin: 20px;
-    padding: 20px;
+    margin: 10px;
+    padding: 10px;
+    width: 50vw;
+    height: 5vw
 }
 
 #top-bar {
-    display: inline-block;
+    
     background-color: rgb(37, 122, 238);
     width: 100%;
     position: relative;
+    
+    
+}
 
+.post-title {
+    margin: 5px 10px
+}
+
+.index-btn {
+    display: inline-block
+}
+
+#login-section {
+    margin: 30px;
+    width: 50vw;
+    text-align: center;
+}
+
+#login-section input {
+margin-left: auto;
+margin-right: auto
+}
+
+#intro-block h1 {
+    color: rgb(37, 122, 238);
+}
+
+.flexbox-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10%
+    
+}
+@media only screen and (min-width: 860px) {
+    .flexbox-container {
+        flex-direction: unset;
+
+    }
 }

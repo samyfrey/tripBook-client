@@ -1,86 +1,138 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>TripBook.com</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<title>TripBook.com</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<!-- Do not add `link` tags-->
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
+		<!-- Do not add `script` tags-->
+		<script
+			src="public/vendor.js"
+			type="text/javascript"
+			charset="utf-8"
+			defer
+		></script>
+		<script
+			src="public/application.js"
+			type="text/javascript"
+			charset="utf-8"
+			defer
+		></script>
+	</head>
+	<body>
+		<section class="before-sign-in">
+			<div class="flexbox-container">
+				<div id="intro-block" class="landing-block">
+					<h1>TripBook.com</h1>
+					<p>Share your travel experiences with your community</p>
+				</div>
 
-      <section class="before-sign-in">
-        
-        <div id="top-bar">
-          <h1>TripBook.com</h1>
-          <button class="btn btn-danger after-sign-in" id="sign-out">Sign Out</button>
-        </div>
-        
-       
-        
-        
-        <div id="login-section">
-          <form id="sign-up" class="border">
-          <fieldset>
-            <legend>Sign Up</legend>
-            <input type="email" name="credentials[email]" placeholder="Email" required>
-            <input type="password" name="credentials[password]" placeholder="Password" required>
-            <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
-            <button class="btn btn-primary">Sign Up</button>
-          </fieldset>
-        </form>
-        <!-- Sign in form goes here -->
-        <form id="sign-in" class="border">
-          <fieldset>
-            <legend>Sign In</legend>
-            <input type="email" name="credentials[email]" placeholder="Email" required>
-            <input type="password" name="credentials[password]" placeholder="Password" required>
-            <button class="btn btn-primary">Sign In</button>
-          </fieldset>
-        </form>
-  
-      </div>  
-    </section>
-    
-      <div id="user-display"></div>
-      <!-- we only this section to be visible after you sign in, by default it should not be displayed-->
-    <section class="after-sign-in">
+				<div id="login-section" class="landing-block">
+					<form id="sign-up" class="border">
+						<fieldset>
+							<legend>Sign Up</legend>
+							<input
+								type="email"
+								name="credentials[email]"
+								placeholder="Email"
+								required
+							/>
+							<input
+								type="password"
+								name="credentials[password]"
+								placeholder="Password"
+								required
+							/>
+							<input
+								type="password"
+								name="credentials[password_confirmation]"
+								placeholder="Password Confirmation"
+								required
+							/>
+							<button class="btn btn-primary">Sign Up</button>
+						</fieldset>
+					</form>
+					<!-- Sign in form goes here -->
+					<form id="sign-in" class="border">
+						<fieldset>
+							<legend>Sign In</legend>
+							<input
+								type="email"
+								name="credentials[email]"
+								placeholder="Email"
+								required
+							/>
+							<input
+								type="password"
+								name="credentials[password]"
+								placeholder="Password"
+								required
+							/>
+							<button class="btn btn-primary">Sign In</button>
+						</fieldset>
+					</form>
+					<p id="login-display"></p>
+				</div>
+			</div>
+		</section>
 
-      <section id="account-section">
-        <form id="change-password" class="border">
-          <fieldset>
-            <legend>Change Password</legend>
-            <input type="password" name="passwords[old]" placeholder="Old Password" required>
-            <input type="password" name="passwords[new]" placeholder="New Password" required>
-            <button>Change Password</button>
-            
-          </fieldset>
-        </form>
-      </section>
-      
-      
-      <section>
-        <form id="post-create" class="border">
-            <legend>Write a Post</legend>
-            <div class="form-group">
-              <input type="text" name="trip[title]" placeholder="Type your title">
-              <textarea type="text" name="trip[text]" placeholder="Type your post"></textarea>
-            </div>
-            <button type="submit">Save</button>
-          </form>
-          
-          <div class="border">
-          <legend>Browse Travel Posts</legend>
-          <button id="post-index">See all posts</button>
-          </div>
-          
-          <div id="post-feed"></div>
-        </section>
-      </section>
+		<section class="after-sign-in">
+			<div id="top-bar">
+				<h1>TripBook.com</h1>
+				<button class="btn btn-danger after-sign-in" id="sign-out-btn">
+					Sign Out
+				</button>
+			</div>
 
-    </body>
+			<div id="user-display"></div>
+
+			<section id="account-section">
+				<form id="change-password" class="border">
+					<fieldset>
+						<legend>Change Password</legend>
+						<input
+							type="password"
+							name="passwords[old]"
+							placeholder="Old Password"
+							required
+						/>
+						<input
+							type="password"
+							name="passwords[new]"
+							placeholder="New Password"
+							required
+						/>
+						<button>Change Password</button>
+					</fieldset>
+				</form>
+			</section>
+
+			<section id="posts-section">
+				<form id="post-create" class="border">
+					<legend>Write a Post</legend>
+					<div class="form-group">
+						<input
+							type="text"
+							name="trip[title]"
+							placeholder="Type your title"
+						/>
+						<textarea
+							type="text"
+							name="trip[text]"
+							placeholder="Type your post"
+						></textarea>
+					</div>
+					<button type="submit">Save</button>
+				</form>
+
+				<div class="border">
+					<legend>Browse Travel Posts</legend>
+					<button id="post-index">See all posts</button>
+					<div id="post-feed"></div>
+				</div>
+			</section>
+		</section>
+	</body>
 </html>
