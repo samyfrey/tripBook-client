@@ -1,11 +1,11 @@
 const store = require('../store')
 
 const signUpSuccess = function (responseData) {
-  $('#user-display').removeClass()
-  $('#user-display').addClass('text-success')
-  $('#user-display').text('Signed up successfully!')
+  $('#login-display').removeClass()
+  $('#login-display').addClass('text-success')
+  $('#login-display').text('Signed up successfully!')
   setTimeout(() => {
-    $('#user-display').empty()
+    $('#login-display').empty()
   }, 5000)
   //   // remove existing classes and then add a green text-success class from boostrap
   //   // we need to remove classes so it doesnt interfere with our bootstrap if a class has been determined before
@@ -16,12 +16,12 @@ const signUpSuccess = function (responseData) {
 }
 
 const signUpFailure = function (error) {
-  $('#user-display').text('The credentials you entered are incorrect. Check your email or password and try again')
+  $('#login-display').text('The credentials you entered are incorrect. Check your email or password and try again')
 
-  $('#user-display').removeClass()
-  $('#user-display').addClass('text-danger')
+  $('#login-display').removeClass()
+  $('#login-display').addClass('text-danger')
   setTimeout(() => {
-    $('#user-display').empty()
+    $('#login-display').empty()
   }, 5000)
   // clear our the form field
   $('form').trigger('reset')
@@ -30,7 +30,7 @@ const signUpFailure = function (error) {
 }
 
 const signInSuccess = function (responseData) {
-  $('#login-section').hide()
+  $('.before-sign-in').hide()
 
   console.log('sign in store is', store)
   store.user = responseData.user
@@ -44,27 +44,21 @@ const signInSuccess = function (responseData) {
   setTimeout(() => {
     $('#user-display').empty()
   }, 5000)
-  $('.before-sign-in').hide()
-  $('#top-bar').show()
+
   $('.after-sign-in').show()
 
   $('.after-sign-in button').addClass('btn btn-primary btn-sm')
-
-  //   // after we sign hide this section
-  //   $('#before-sign-in').hide()
-  //   // after we sign show this section
-  //   $('.after-sign-in').show()
 
   console.log('sign in responseData is', responseData)
 }
 
 const signInFailure = function (error) {
-  $('#user-display').text('The credentials you entered are incorrect. Check your email and password and try again')
+  $('#login-display').text('The credentials you entered are incorrect. Check your email and password and try again')
 
-  $('#user-display').removeClass()
-  $('#user-display').addClass('text-danger')
+  $('#login-display').removeClass()
+  $('#login-display').addClass('text-danger')
   setTimeout(() => {
-    $('#user-display').empty()
+    $('#login-display').empty()
   }, 2000)
   // clear our the form field
   $('form').trigger('reset')
@@ -102,7 +96,7 @@ const signOutSuccess = function () {
   }, 5000)
   $('form').trigger('reset')
   store.user = null
-  $('form').trigger('reset')
+
   $('.after-sign-in').hide()
   $('.before-sign-in').show()
 
